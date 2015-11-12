@@ -1,0 +1,33 @@
+dovecot:
+  build: dovecot/
+  ports: 
+    - "993:993" #imaps
+  hostname: charper.co.uk
+  container_name: dovecot
+  volumes_from:
+    - data
+
+exim:
+  build: exim/
+  ports:
+    - "25:25"
+    - "465:465"
+    - "587:587"
+  hostname: charper.co.uk
+  links:
+    - spamassassin 
+  container_name: exim
+  volumes_from:
+    - data
+
+spamassassin:
+  build: spamassassin/
+  hostname: charper.co.uk
+  container_name: spamassassin
+  volumes_from:
+    - data
+
+data:
+  build: data/
+  hostname: data
+  container_name: DO_NOT_DELETE_data_volume_DO_NOT_DELETE
