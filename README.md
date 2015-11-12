@@ -7,8 +7,11 @@ storage. Utilising debian,exim4, dovecot, spamassassin ,dkim and spamassassin.
 Mail is stored in a data container (http://docs.docker.com/v1.8/userguide/dockervolumes/)
 
 Authentication is done through dovecot-auth 
+
 Communication is done through sockets stored on /mnt/sockets 
+
 Mail is stored at /mnt/vmail
+
 Logs stored at /mnt/logs
 
 
