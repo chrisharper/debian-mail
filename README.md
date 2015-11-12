@@ -37,12 +37,14 @@ Add users to dovecot/users ,use doveadm pw -s SHA512-CRYPT to generate password 
 Add aliases to exim/aliases if required
 
 Running 
+=======
   ```
     cd debian-mail
     docker-compose build .
     docker-compose up
   ```
 Troubleshooting
+===============
 
 Logs can be read using
   ```  
